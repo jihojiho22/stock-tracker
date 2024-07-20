@@ -1,3 +1,4 @@
+
 body {
   width: 400px;
   font-family: 'Roboto', sans-serif;
@@ -39,7 +40,24 @@ button {
 button:hover {
   background-color: #45a049;
 }
+button.update {
+  background-color: #3498db;
+}
+.update-container {
+  text-align: center;
+}
 
+button.add {
+  background-color: #2ecc71;
+}
+
+button.delete {
+  background-color: #e74c3c;
+}
+
+button.alert {
+  background-color: #f39c12;
+}
 input[type="text"] {
   width: 100%;
   padding: 12px 20px;
@@ -49,6 +67,12 @@ input[type="text"] {
   border-radius: 4px;
   box-sizing: border-box;
 }
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
 
 .stock-item {
   background-color: #f9f9f9;
@@ -56,6 +80,7 @@ input[type="text"] {
   padding: 15px;
   margin-bottom: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .stock-item h2 {
@@ -111,4 +136,122 @@ input[type="text"] {
 .pagination span {
   margin: 0 10px;
   font-weight: bold;
+}
+
+.notification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.notification-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.notification-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.animated-character {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: walkDown 2s forwards, celebrate 3s 2s;
+  text-align: center;
+  z-index: 1001;
+}
+
+.congratulation {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+}
+
+.character-container {
+  display: flex;
+  justify-content: center;
+}
+
+.character {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.head {
+  font-size: 48px;
+  margin-bottom: -10px;
+}
+
+.body {
+  display: flex;
+  align-items: center;
+}
+
+.torso {
+  font-size: 48px;
+}
+
+.arm {
+  position: relative;
+  height: 60px;
+  width: 20px;
+  background-color: #f0d890;
+  margin: 0 10px;
+}
+
+.left-arm {
+  transform: rotate(30deg);
+}
+
+.right-arm {
+  transform: rotate(-30deg);
+}
+
+.hand {
+  position: absolute;
+  bottom: -30px;
+  width: 80px;
+  background-color: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-size: 14px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.left-hand {
+  left: -30px;
+  transform: rotate(-30deg);
+}
+
+.right-hand {
+  right: -30px;
+  transform: rotate(30deg);
+}
+
+@keyframes walkDown {
+  from { top: -150px; }
+  to { top: 20%; }
+}
+
+@keyframes celebrate {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.1); }
 }
